@@ -22,6 +22,8 @@ router.get("/new",isLoggedIn,listingController.renderNewForm);
 
 router.get("/category/:key",listingController.filterListing);
 
+router.post("/search/?",listingController.searchListing);
+
 router
     .route("/:id")
     .get(wrapAsync(listingController.showListing))

@@ -24,6 +24,13 @@ module.exports.filterListing = async(req,res)=>{
     // console.log(allListings);
     res.render("listings/index.ejs",{allListings});
 }
+module.exports.searchListing = async(req,res)=>{
+    let {searchContent} = req.body;
+    // console.log(searchContent);
+    const allListings = await Listing.find({$or : [{country: searchContent},{title:searchContent},{location:searchContent}]});
+    // console.log(listing);
+    res.render("listings/index.ejs",{allListings});
+}
 module.exports.createListing = async(req,res)=>{
     // let {title,description,image,price,country,location} = req.body;
     // console.log(req.body.listing);

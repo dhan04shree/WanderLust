@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views/"));
-const Listing = require("./models/listing.js");
+// const Listing = require("./models/listing.js");
 const methodOverride = require("method-override");
 
 app.use(express.static(path.join(__dirname,"/public/css")));
@@ -90,13 +90,13 @@ app.use((req,res,next)=>{
 //     // console.log(allListings);
 //     res.render("listings/index.ejs",{allListings});
 // });
-app.post("/listings/search/?",async(req,res)=>{
-    let {searchContent} = req.body;
-    // console.log(searchContent);
-    const allListings = await Listing.find({country: searchContent});
-    // console.log(listing);
-    res.render("listings/index.ejs",{allListings});
-});
+// app.post("/listings/search/?",async(req,res)=>{
+//     let {searchContent} = req.body;
+//     // console.log(searchContent);
+//     const allListings = await Listing.find({country: searchContent});
+//     // console.log(listing);
+//     res.render("listings/index.ejs",{allListings});
+// });
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);

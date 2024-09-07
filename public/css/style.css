@@ -178,5 +178,9 @@ body{
 .slide-icons{
     align-items: center;
 }
+@media(max-width:766px){
 
-
+    .collapse{
+        padding-top: 20px !important;
+    }
+}

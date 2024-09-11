@@ -56,6 +56,7 @@ body{
     background-color: #ebebeb;
     flex-wrap: wrap;
     justify-content:center;
+    margin-top: 50px;
  /* text-align: center; */
 }
 /* Cards */
@@ -182,5 +183,10 @@ body{
 
     .collapse{
         padding-top: 20px !important;
+    }
+}
+@media (max-width:950px){
+    #mymap{
+        height: 50vh !important;
     }
 }

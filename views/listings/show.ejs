@@ -73,14 +73,16 @@
                             <form action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST" class="mb-3">
                                 <button class="btn btn-sm btn-dark">Delete</button>
                             </form>
-                        <%} %>
+                            <%} %>
+                        </div>
                     </div>
+                    <%} %>
                 </div>
                 <%} %>
-
-        </div>
-        <%} %>
+                <h5>Where you'll be</h5>
     </div>
-  
+    <div style="height: 80vh;" data-info="<%=listing.location%>" class="<%=listing.country%>" id="mymap">
+    </div>
+    <script src="/map.js"></script>
 <!-- </div> -->
 

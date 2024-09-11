@@ -33,8 +33,8 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-const dbUrl = process.env.ATLASDB_URL;
+//const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust"; //1.M
+const dbUrl = process.env.ATLASDB_URL;//1.C
 
 main().then(()=>{
     console.log("connected to DB");
@@ -42,10 +42,10 @@ main().then(()=>{
 .catch((err)=> console.log(err));
 // async function main(){
 //     await mongoose.connect(MONGO_URL);
-// }
+// } //2.M
 async function main(){
     await mongoose.connect(dbUrl);
-}
+}//2.C
 const store = MongoStore.create({
     mongoUrl : dbUrl,
     crypto : {

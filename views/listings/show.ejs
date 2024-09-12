@@ -1,3 +1,4 @@
+
 <% layout("/layouts/boilerplate")%>
     <!-- <div class="mt-3"> -->
         <div class="mt-3">
@@ -64,7 +65,7 @@
         <div class="row">
             <p><b>All reviews</b></p>
             <% for (review of listing.reviews){ %>
-                <div class="card col-5 mb-3 ms-3">
+                <div class="card col-5 mb-3 ms-3 show-rev">
                     <div class="card-body">
                         <h5 class="card-title">@<%=review.author.username %></h5>
                         <p class="starability-result card-text" data-rating= "<%=review.rating%>">Rated: 3 stars</p>
@@ -80,9 +81,5 @@
                 </div>
                 <%} %>
             </div>
-            <h5>Where you'll be</h5>
-    <div style="height: 80vh;" data-info="<%=listing.location%>" class="<%=listing.country%>" id="mymap" api-info="<%=APIKEY%>">
-    </div>
-    <script src="/map.js"></script>
 <!-- </div> -->
 

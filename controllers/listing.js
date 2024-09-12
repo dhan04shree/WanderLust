@@ -10,13 +10,14 @@ module.exports.renderNewForm = (req,res)=>{
 }
 module.exports.showListing = async (req,res)=>{
     let {id} = req.params;
+    const APIKEY = process.env.APIKEY;
     const listing = await Listing.findById(id).populate({path : "reviews",populate : {path : "author"}}).populate("owner");
     if(!listing){
         req.flash("error","Listing you requested for does not exist!");
         res.redirect("/listings");
     }
     // console.log(listing);
-    res.render("listings/show.ejs",{listing});
+    res.render("listings/show.ejs",{listing,APIKEY});
 }
 module.exports.filterListing = async(req,res)=>{
     let{key} = req.params;

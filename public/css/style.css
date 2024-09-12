@@ -68,6 +68,7 @@ body{
     border-radius: 1rem !important;
     width: 100% !important;
     object-fit: cover !important;
+    /* transition: transform 0.3s ease-in-out; */
 }
 .card-body{
     padding: 0 !important;
@@ -88,9 +89,7 @@ body{
     background-color: white;
 }
 /* .card-img-top:hover{
-    transform: scale(1.5);
-    transition: 0.5s;
-
+    transform: scale(1.2);
 } */
 /* new page */
 .add-btn{
@@ -185,6 +184,7 @@ body{
         padding-top: 20px !important;
     }
 }
+
 @media (max-width:950px){
     #mymap{
         height: 50vh !important;
